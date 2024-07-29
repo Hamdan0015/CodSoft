@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple ChatBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #chatbox {
+            width: 50%;
+            max-width: 600px;
+            background: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #messages {
+            height: 400px;
+            overflow-y: scroll;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .user {
+            background: #e1ffc7;
+            text-align: right;
+        }
+        .bot {
+            background: #ffe1e1;
+        }
+        #user-input {
+            width: calc(100% - 50px);
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        #send {
+            padding: 10px 20px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <div id="messages"></div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send">Send</button>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('send');
+        const userInput = document.getElementById('user-input');
+        const messages = document.getElementById('messages');
+
+        sendButton.addEventListener('click', () => {
+            const userText = userInput.value;
+            if (userText.trim() === '') return;
+            addMessage(userText, 'user');
+            fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `user_input=${userText}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                addMessage(data, 'bot');
+            });
+            userInput.value = '';
+            userInput.focus();
+        });
+
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+            messageDiv.textContent = text;
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

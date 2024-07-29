@@ -1,0 +1,11 @@
+ISBN,Book-Title,Book-Author,Publisher,Year-Of-Publication,Image-URL-S,Image-URL-M,Image-URL-L
+0345453747,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Pan Books,1979,static/images/the_hitchhikers_guide_to_the_galaxy.jpg,static/images/the_hitchhikers_guide_to_the_galaxy.jpg,static/images/the_hitchhikers_guide_to_the_galaxy.jpg
+0553385838,The Martian,Andy Weir,Crown,2014,static/images/the_martian.jpg,static/images/the_martian.jpg,static/images/the_martian.jpg
+0060935464,The Catcher in the Rye,J.D. Salinger,Little Brown and Company,1951,static/images/the_catcher_in_the_rye.jpg,static/images/the_catcher_in_the_rye.jpg,static/images/the_catcher_in_the_rye.jpg
+0747532699,Harry Potter and the Philosopher's Stone,J.K. Rowling,Bloomsbury,1997,static/images/harry_potter_and_the_philosophers_stone.jpg,static/images/harry_potter_and_the_philosophers_stone.jpg,static/images/harry_potter_and_the_philosophers_stone.jpg
+0747538492,Harry Potter and the Chamber of Secrets,J.K. Rowling,Bloomsbury,1998,static/images/harry_potter_and_the_chamber_of_secrets.jpg,static/images/harry_potter_and_the_chamber_of_secrets.jpg,static/images/harry_potter_and_the_chamber_of_secrets.jpg
+0316015849,The Book Thief,Markus Zusak,Knopf Books for Young Readers,2005,static/images/the_book_thief.jpg,static/images/the_book_thief.jpg,static/images/the_book_thief.jpg
+0385504209,The Da Vinci Code,Dan Brown,Doubleday,2003,static/images/the_da_vinci_code.jpg,static/images/the_da_vinci_code.jpg,static/images/the_da_vinci_code.jpg
+0439136350,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,Scholastic,1999,static/images/harry_potter_and_the_prisoner_of_azkaban.jpg,static/images/harry_potter_and_the_prisoner_of_azkaban.jpg,static/images/harry_potter_and_the_prisoner_of_azkaban.jpg
+0439139600,Harry Potter and the Goblet of Fire,J.K. Rowling,Scholastic,2000,static/images/harry_potter_and_the_goblet_of_fire.jpg,static/images/harry_potter_and_the_goblet_of_fire.jpg,static/images/harry_potter_and_the_goblet_of_fire.jpg
+0439358078,Harry Potter and the Order of the Phoenix,J.K. Rowling,Scholastic,2003,static/images/harry_potter_and_the_order_of_the_phoenix.jpg,static/images/harry_potter_and_the_order_of_the_phoenix.jpg,static/images/harry_potter_and_the_order_of_the_phoenix.jpg

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #recommendations {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #recommendations li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        #recommendations li:last-child {
+            border-bottom: none;
+        }
+        #recommendations img {
+            width: 75px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Recommendations</h1>
+    <input id="book-title" type="text" placeholder="Enter book title">
+    <button id="get-recommendations">Get Recommendations</button>
+    <ul id="recommendations"></ul>
+
+    <script>
+        document.getElementById('get-recommendations').addEventListener('click', getRecommendations);
+
+        function getRecommendations() {
+            var bookTitle = document.getElementById('book-title').value;
+            fetch(`/recommend?book_title=${bookTitle}`)
+             .then(response => response.json())
+             .then(recommendations => {
+                    var list = document.getElementById('recommendations');
+                    list.innerHTML = '';
+                    recommendations.forEach(recommendation => {
+                        var item = document.createElement('li');
+                        var img = document.createElement('img');
+                        img.src = recommendation[2];
+                        img.alt = recommendation[0];
+                        item.appendChild(img);
+                        item.appendChild(document.createTextNode(`${recommendation[0]} by ${recommendation[1]}`));
+                        list.appendChild(item);
+                    });
+                })
+             .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>
